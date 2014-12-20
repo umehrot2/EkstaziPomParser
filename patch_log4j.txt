@@ -1,0 +1,12 @@
+diff --git a/run_ekstazi.sh b/run_ekstazi_2.sh
+index 7ad66b3..1c6dac0 100755
+--- a/run_ekstazi.sh
++++ b/run_ekstazi_2.sh
+@@ -186,6 +186,7 @@ do
+ 		fi
+ 	fi
+ 
++	find ./ -iname "*pom.xml*" -exec sed -i '/maven-antrun-plugin/,/<plugin>/d' {} \;
+ 	
+ 	for index in "${!modules[@]}"
+ 	

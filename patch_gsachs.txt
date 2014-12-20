@@ -1,0 +1,15 @@
+diff --git a/run_ekstazi.sh b/run_ekstazi_2.sh
+index 7ad66b3..222dafb 100755
+--- a/run_ekstazi.sh
++++ b/run_ekstazi_2.sh
+@@ -186,7 +186,9 @@ do
+ 		fi
+ 	fi
+ 
+-	
++	find ./ -iname "*pom.xml*" -exec sed -i 's/^\s*<forkMode/<\!-- <forkMode/g' {} \;
++	find ./ -iname "*pom.xml*" -exec sed -i 's/<\/forkMode>\s*$/<\/forkMode> -->/g' {} \;
++
+ 	for index in "${!modules[@]}"
+ 	
+ 	do
